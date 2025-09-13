@@ -1,4 +1,4 @@
-## 🚦 PR Checklist
+# 🚦 PR Checklist
 
 - [ ] Follows modular structure and feature-based folders
 - [ ] No business logic in UI components

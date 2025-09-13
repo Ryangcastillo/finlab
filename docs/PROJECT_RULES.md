@@ -87,7 +87,8 @@
 
 **Use this prompt when asking AI to help build your frontend:**
 
-```
+```bash
+
 Create a modular frontend application with the following requirements:
 
 ARCHITECTURE:
@@ -96,9 +97,9 @@ ARCHITECTURE:
 - Implement clear separation between UI components and business logic
 - Create reusable components that don't know about business logic
 
-FOLDER STRUCTURE:
 
-```
+```bash
+
 
 src/
 ├── shared/                 # Shared utilities and components
@@ -124,8 +125,9 @@ src/
 ├── router/            # Routing configuration
 └── config/            # App configuration
 
-```
+```bash
 BACKEND INTEGRATION RULES:
+
 - Create a service layer that handles ALL backend communication
 - Use custom hooks to manage API calls and state
 - Never make direct API calls from components
@@ -144,7 +146,7 @@ Please implement this with [YOUR_TECH_STACK] and include:
 3. TypeScript types for all data structures
 4. Basic testing setup for components and services
 
-```
+```plaintext
 
 ## CSS Error Prevention Setup
 
@@ -177,7 +179,7 @@ module.exports = {
   ],
 }
 
-```
+```plaintext
 
 ### 2. ESLint Rules for CSS (.eslintrc.js)
 
@@ -196,7 +198,7 @@ module.exports = {
   }
 }
 
-```
+```plaintext
 
 ### 3. VS Code Settings (settings.json)
 
@@ -214,7 +216,7 @@ module.exports = {
   }
 }
 
-```
+```plaintext
 
 ## TypeScript Error Prevention
 
@@ -235,7 +237,7 @@ module.exports = {
   "exclude": ["node_modules", "build"]
 }
 
-```
+```plaintext
 
 ### 2. API Types Template
 
@@ -260,7 +262,7 @@ export interface ApiState<T> {
   error: ApiError | null;
 }
 
-```
+```plaintext
 
 ## Development Workflow
 
@@ -304,13 +306,13 @@ npx tailwindcss init -p
 # Setup TypeScript
 npx tsc --init
 
-```
+```plaintext
 
 ## Example Module Structure
 
 When requesting a feature, ask for this structure:
 
-```
+```plaintext
 features/auth/
 ├── components/
 │   ├── LoginForm.tsx      # Pure UI component
@@ -328,13 +330,13 @@ features/auth/
 │   └── index.ts           # Export types
 └── index.ts               # Public API of the module
 
-```
+```plaintext
 
 This structure ensures that each module is self-contained and can work independently, making backend integration much easier!
 
 ## 🎯 GITHUB REPOSITORY TEMPLATE STRUCTURE
 
-```
+```plaintext
 project-name/
 ├── .github/
 │   ├── workflows/           # CI/CD pipelines
