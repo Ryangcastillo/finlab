@@ -1,0 +1,27 @@
+name: Lint & Structure Check
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint src/ --max-warnings=0
+
+      - name: Run Prettier
+        run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,md}"
+
+      - name: Check folder structure
+        run: |
+          if [ -d "src/components" ] || [ -d "src/services" ]; then
+            echo "❌ Root-level components/services folders found. Use feature-based folders!"
+            exit 1
