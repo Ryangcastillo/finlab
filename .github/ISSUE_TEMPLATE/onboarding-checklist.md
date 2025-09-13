@@ -1,3 +1,5 @@
+# Project Initialization Checklist
+
 name: Project Initialization Checklist
 about: Ensure all repo rules and best practices are set up before coding
 title: "[INIT] Project Onboarding Checklist"
@@ -5,14 +7,15 @@ labels: ["onboarding", "rules"]
 assignees: []
 
 body:
-  - type: markdown
+
+- type: markdown
     attributes:
       value: |
         ## 📋 Project Initialization Checklist
 
         Please check all items before starting development.
 
-  - type: checkboxes
+- type: checkboxes
     attributes:
       label: Setup
       options:
