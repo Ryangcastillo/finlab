@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Discover solutions
+        id: discover
+        shell: pwsh
+        run: |
+            $solutions = Get-ChildItem -Recurse -Filter *.sln | Select-Object -ExpandProperty FullName
+            if(-not $solutions){
+              echo "found=false" >> $env:GITHUB_OUTPUT
+              echo "No solution files found."
+              exit 0
+            }
+            echo "found=true" >> $env:GITHUB_OUTPUT
+            # Join with :: as a delimiter safe for GitHub parsing
+            $joined = ($solutions -join '::')
+            echo "list=$joined" >> $env:GITHUB_OUTPUT
+
+      - name: Build all solutions (${{ matrix.configuration }})
+        if: steps.discover.outputs.found == 'true'
+        shell: pwsh
+        run: |
+          $solutions = "${{ steps.discover.outputs.list }}".Split('::')
+          foreach($s in $solutions){
+            echo \"Building $s (${env:Configuration})\"
+            msbuild \"$s\" /t:Build /p:Configuration=${{ matrix.configuration }} /verbosity:minimal
+          }
+
+      - name: Upload build outputs (Release only)
+        if: matrix.configuration == 'Release' && steps.discover.outputs.found == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            **/bin/Release/**
+            !**/obj/**
+
+      - name: No solutions
+        if: steps.discover.outputs.found != 'true'
+        run: echo "Skipping build — no .sln files yet."
