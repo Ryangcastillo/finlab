@@ -1,0 +1,14 @@
+{
+  "name": "@finlab/database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "init": "prisma init",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  }
+}
