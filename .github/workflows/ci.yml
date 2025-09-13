@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Locate Solution File
+        id: solutions
+        shell: pwsh
+        run: |
+          $sln = Get-ChildItem -Recurse -Filter *.sln | Select-Object -First 1 -ExpandProperty FullName
+          if(-not $sln){
+            echo "No solution file found. Skipping msbuild." | Out-Host
+            echo "found=false" >> $env:GITHUB_OUTPUT
+          } else {
+            echo "found=true" >> $env:GITHUB_OUTPUT
+            echo "path=$sln" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Build
+        if: steps.solutions.outputs.found == 'true'
+        run: msbuild "${{ steps.solutions.outputs.path }}" /t:Build /p:Configuration=Release /verbosity:minimal
+
+      - name: Done (No Solution)
+        if: steps.solutions.outputs.found != 'true'
+        run: echo "No .sln present yet; build skipped." 
