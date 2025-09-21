@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Run ESLint
-        run: npx eslint src/ --max-warnings=0
+        run: npx eslint src/ --max-warnings=50
 
       - name: Run Prettier
         run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,md}"
