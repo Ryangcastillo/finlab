@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Plus, Users, FileText, DollarSign, Calendar, Upload, MessageCircle } from 'lucide-react';
-import { Header } from '../components/layout/Header';
-import { Sidebar } from '../components/layout/Sidebar';
-import { Button } from '../components/ui/button';
-import { Card } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import { Input } from '../components/ui/input';
+import { Header } from '../shared/components/layout/Header';
+import { Sidebar } from '../shared/components/layout/Sidebar';
+import { Button } from '../shared/components/button';
+import { Card } from '../shared/components/card';
+import { Badge } from '../shared/components/badge';
+import { Avatar, AvatarImage, AvatarFallback } from '../shared/components/avatar';
+import { Input } from '../shared/components/input';
 
 export const CollaborationPage = () => {
   const [activeTab, setActiveTab] = useState('expenses');

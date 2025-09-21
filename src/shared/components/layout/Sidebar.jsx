@@ -11,8 +11,8 @@ import {
   Target,
   FileText
 } from 'lucide-react';
-import { cn } from '../../lib/utils';
-import { Button } from '../ui/button';
+import { cn } from '../../utils/classnames';
+import { Button } from '../button';
 
 export const Sidebar = ({ className, collapsed = false }) => {
   const location = useLocation();

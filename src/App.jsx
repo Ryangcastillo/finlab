@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { LandingPage } from './pages/LandingPage';
-import { EnhancedAuthPage } from './pages/EnhancedAuthPage';
-import { DashboardPage } from './pages/DashboardPage';
-import { InsightsPage } from './pages/InsightsPage';
-import { CollaborationPage } from './pages/CollaborationPage';
-import { SettingsPage } from './pages/SettingsPage';
-import './App.css';
+import { 
+  LandingPage, 
+  EnhancedAuthPage, 
+  DashboardPage, 
+  InsightsPage, 
+  CollaborationPage, 
+  SettingsPage 
+} from './pages';
+import './shared/constants/App.css';
 
 function App() {
   return (

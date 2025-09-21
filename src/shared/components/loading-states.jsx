@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from '../utils/classnames';
 import { Loader2, CheckCircle, AlertCircle, Info } from 'lucide-react';
 
 // Skeleton Components
