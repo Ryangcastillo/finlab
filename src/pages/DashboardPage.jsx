@@ -1,11 +1,11 @@
 import React from 'react';
 import { Plus, TrendingUp, TrendingDown, DollarSign, Users } from 'lucide-react';
-import { Header } from '../components/layout/Header';
-import { Sidebar } from '../components/layout/Sidebar';
-import { Button } from '../components/ui/button';
-import { Card } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Progress } from '../components/ui/progress';
+import { Header } from '../shared/components/layout/Header';
+import { Sidebar } from '../shared/components/layout/Sidebar';
+import { Button } from '../shared/components/button';
+import { Card } from '../shared/components/card';
+import { Badge } from '../shared/components/badge';
+import { Progress } from '../shared/components/progress';
 
 export const DashboardPage = () => {
   // Mock data for dashboard

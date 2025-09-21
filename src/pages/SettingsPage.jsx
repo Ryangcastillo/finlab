@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { User, Users, FileText, Shield, Bell, Palette, Download, Trash2 } from 'lucide-react';
-import { Header } from '../components/layout/Header';
-import { Sidebar } from '../components/layout/Sidebar';
-import { Button } from '../components/ui/button';
-import { Card } from '../components/ui/card';
-import { Input } from '../components/ui/input';
-import { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
-import { Badge } from '../components/ui/badge';
-import { ThemeToggle } from '../components/ui/theme-toggle';
+import { Header } from '../shared/components/layout/Header';
+import { Sidebar } from '../shared/components/layout/Sidebar';
+import { Button } from '../shared/components/button';
+import { Card } from '../shared/components/card';
+import { Input } from '../shared/components/input';
+import { Avatar, AvatarImage, AvatarFallback } from '../shared/components/avatar';
+import { Badge } from '../shared/components/badge';
+import { ThemeToggle } from '../shared/components/theme-toggle';
 
 export const SettingsPage = () => {
   const [activeSection, setActiveSection] = useState('profile');

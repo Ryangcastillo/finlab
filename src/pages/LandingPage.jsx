@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Users, BarChart3, Target } from 'lucide-react';
-import { Header } from '../components/layout/Header';
-import { Footer } from '../components/layout/Footer';
-import { Button } from '../components/ui/button';
-import { Card } from '../components/ui/card';
+import { Header, Footer } from '../shared/components/layout';
+import { Button, Card } from '../shared/components';
 
 export const LandingPage = () => {
   const features = [

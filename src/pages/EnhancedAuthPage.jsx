@@ -1,10 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowLeft, Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
-import { ThemeToggle } from '../components/ui/theme-toggle';
-import { EnhancedButton } from '../components/ui/enhanced-button';
-import { EnhancedInput, validationRules } from '../components/ui/enhanced-input';
-import { StatusIndicator, ProgressBar } from '../components/ui/loading-states';
+import { ThemeToggle, Button, Input } from '../shared/components';
+import { StatusIndicator, ProgressBar } from '../shared/components/loading-states';
+
+// Validation rules
+const validationRules = {
+  required: {
+    required: true,
+    message: 'This field is required'
+  },
+  email: {
+    required: true,
+    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    message: 'Please enter a valid email address'
+  },
+  password: {
+    required: true,
+    minLength: 8,
+    message: 'Password must be at least 8 characters long'
+  }
+};
 
 export const EnhancedAuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -197,7 +213,7 @@ export const EnhancedAuthPage = () => {
             {/* Full Name - Sign Up Only */}
             {isSignUp && (
               <div className="fade-in-up">
-                <EnhancedInput
+                <Input
                   label="Full Name"
                   placeholder="Enter your full name"
                   value={formData.fullName}
@@ -212,7 +228,7 @@ export const EnhancedAuthPage = () => {
 
             {/* Email */}
             <div className="fade-in-up">
-              <EnhancedInput
+              <Input
                 label="Email"
                 type="email"
                 placeholder="Enter your email"
@@ -227,7 +243,7 @@ export const EnhancedAuthPage = () => {
 
             {/* Password */}
             <div className="fade-in-up">
-              <EnhancedInput
+              <Input
                 label="Password"
                 type="password"
                 placeholder="Enter your password"
@@ -259,7 +275,7 @@ export const EnhancedAuthPage = () => {
             {/* Confirm Password - Sign Up Only */}
             {isSignUp && (
               <div className="fade-in-up">
-                <EnhancedInput
+                <Input
                   label="Confirm Password"
                   type="password"
                   placeholder="Confirm your password"
@@ -276,7 +292,7 @@ export const EnhancedAuthPage = () => {
 
             {/* Submit Button */}
             <div className="fade-in-up">
-              <EnhancedButton
+              <Button
                 type="submit"
                 className="w-full"
                 size="lg"
@@ -285,7 +301,7 @@ export const EnhancedAuthPage = () => {
                 disabled={!isFormValid()}
               >
                 {isSignUp ? 'Create Account' : 'Sign In'}
-              </EnhancedButton>
+              </Button>
             </div>
 
             {/* Toggle Form Type */}
