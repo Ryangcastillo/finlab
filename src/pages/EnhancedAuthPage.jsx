@@ -4,6 +4,24 @@ import { CheckCircle2, ArrowLeft, Eye, EyeOff, Mail, Lock, User } from 'lucide-r
 import { ThemeToggle, Button, Input } from '../shared/components';
 import { StatusIndicator, ProgressBar } from '../shared/components/loading-states';
 
+// Validation rules
+const validationRules = {
+  required: {
+    required: true,
+    message: 'This field is required'
+  },
+  email: {
+    required: true,
+    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    message: 'Please enter a valid email address'
+  },
+  password: {
+    required: true,
+    minLength: 8,
+    message: 'Password must be at least 8 characters long'
+  }
+};
+
 export const EnhancedAuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
