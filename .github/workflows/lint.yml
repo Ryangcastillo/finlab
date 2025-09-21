@@ -12,16 +12,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run ESLint
-        run: npx eslint src/ --max-warnings=0
+        run: npx eslint . --ext js,jsx,ts,tsx --max-warnings=0
 
       - name: Run Prettier
-        run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,md}"
+        run: npx prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"
 
       - name: Check folder structure
         run: |
-          if [ -d "src/components" ] || [ -d "src/services" ]; then
+          if [ -d "components" ] || [ -d "services" ]; then
             echo "❌ Root-level components/services folders found. Use feature-based folders!"
             exit 1
+          fi
