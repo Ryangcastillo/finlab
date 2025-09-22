@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../ui/button';
-import { ThemeToggle } from '../ui/theme-toggle';
+import { Button } from './components/ui/button';
+import { ThemeToggle } from './components/ui/theme-toggle';
 
 export const Header = ({ variant = 'landing' }) => {
   const Logo = () => (

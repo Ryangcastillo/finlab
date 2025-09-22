@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ArrowLeft, Eye, EyeOff, Mail, Lock, User } from 'lucide-react';
-import { ThemeToggle } from '../components/ui/theme-toggle';
-import { EnhancedButton } from '../components/ui/enhanced-button';
-import { EnhancedInput, validationRules } from '../components/ui/enhanced-input';
-import { StatusIndicator, ProgressBar } from '../components/ui/loading-states';
+import { ThemeToggle } from './components/ui/theme-toggle';
+import { EnhancedButton } from './components/ui/enhanced-button';
+import { EnhancedInput, validationRules } from './components/ui/enhanced-input';
+import { StatusIndicator, ProgressBar } from './components/ui/loading-states';
 
 export const EnhancedAuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);

@@ -1,5 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -160,9 +161,7 @@
 @layer components {
   /* Enhanced interactive elements */
   .btn-interactive {
-    @apply transition-all duration-200 ease-in-out cursor-pointer;
-    @apply hover:transform hover:-translate-y-0.5 hover:shadow-md;
-    @apply active:transform active:translate-y-0 active:shadow-sm;
+    @apply transition-all duration-200 cursor-pointer;
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
   

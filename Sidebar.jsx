@@ -12,7 +12,7 @@ import {
   FileText
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
-import { Button } from '../ui/button';
+import { Button } from './components/ui/button';
 
 export const Sidebar = ({ className, collapsed = false }) => {
   const location = useLocation();
