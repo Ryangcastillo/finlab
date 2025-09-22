@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from './lib/utils';
 import { AlertCircle, CheckCircle2, Eye, EyeOff } from 'lucide-react';
 
 const EnhancedInput = forwardRef(({
