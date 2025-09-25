@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Card } from '../components/ui/card';
-import { ThemeToggle } from '../components/ui/theme-toggle';
+import { Button } from './components/ui/button';
+import { Input } from './components/ui/input';
+import { Card } from './components/ui/card';
+import { ThemeToggle } from './components/ui/theme-toggle';
 
 export const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);

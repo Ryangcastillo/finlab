@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import { LandingPage } from './pages/LandingPage';
-import { EnhancedAuthPage } from './pages/EnhancedAuthPage';
-import { DashboardPage } from './pages/DashboardPage';
-import { InsightsPage } from './pages/InsightsPage';
-import { CollaborationPage } from './pages/CollaborationPage';
-import { SettingsPage } from './pages/SettingsPage';
+import { ThemeProvider } from './ThemeContext';
+import { LandingPage } from './LandingPage';
+import { EnhancedAuthPage } from './EnhancedAuthPage';
+import { DashboardPage } from './DashboardPage';
+import { InsightsPage } from './InsightsPage';
+import { CollaborationPage } from './CollaborationPage';
+import { SettingsPage } from './SettingsPage';
 import './App.css';
 
 function App() {

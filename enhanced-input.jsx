@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useEffect } from 'react';
-import { cn } from '../../lib/utils';
+import { cn } from './lib/utils';
 import { AlertCircle, CheckCircle2, Eye, EyeOff } from 'lucide-react';
 
 const EnhancedInput = forwardRef(({
@@ -120,7 +120,7 @@ const EnhancedInput = forwardRef(({
           className={cn(
             // Base styles
             'flex h-10 w-full rounded-md border bg-background px-3 py-2 text-sm',
-            'transition-all duration-200 ease-in-out',
+            'transition-all duration-200 ',
             'placeholder:text-muted-foreground',
             'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
             'disabled:cursor-not-allowed disabled:opacity-50',

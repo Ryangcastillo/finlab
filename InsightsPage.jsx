@@ -1,12 +1,12 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from 'recharts';
 import { Target, TrendingUp, Lightbulb, DollarSign } from 'lucide-react';
-import { Header } from '../components/layout/Header';
-import { Sidebar } from '../components/layout/Sidebar';
-import { Card } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Progress } from '../components/ui/progress';
-import { Button } from '../components/ui/button';
+import { Header } from './components/layout/Header';
+import { Sidebar } from './components/layout/Sidebar';
+import { Card } from './components/ui/card';
+import { Badge } from './components/ui/badge';
+import { Progress } from './components/ui/progress';
+import { Button } from './components/ui/button';
 
 export const InsightsPage = () => {
   // Mock data for charts
